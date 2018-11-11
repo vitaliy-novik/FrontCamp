@@ -9,66 +9,21 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
+            <div class="row" id="searchWidget">
                 <div class="input-field col s11">
-                    <input id="query" type="text" placeholder="query">
-                    <!-- <label for="query">query</label> -->
+                    <input id="query" type="text" placeholder="query" id="searchWidgetInput">
                     <span class="helper-text">Helper text</span>
                 </div>
                 <div class="input-field col s1">
-                    <a class="waves-effect waves-light btn-large">
+                    <a class="waves-effect waves-light btn-large" id="submitSearchButton">
                         <i class="material-icons search">search</i>
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <label>
-                    <input name="group1" type="radio" checked />
-                    <span>Red</span>
-                </label>
-                <label>
-                    <input name="group1" type="radio" checked />
-                    <span>Red</span>
-                </label>
-                <label>
-                    <input name="group1" type="radio" checked />
-                    <span>Red</span>
-                </label>
-                <label>
-                    <input name="group1" type="radio" checked />
-                    <span>Red</span>
-                </label>
-                <label>
-                    <input name="group1" type="radio" checked />
-                    <span>Red</span>
-                </label>
-            </div>
-            <div class="row">
-                <label class="col s2">
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Filled in</span>
-                </label>
-                <label class="col s2">
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Filled in</span>
-                </label>
-                <label class="col s2">
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Filled in</span>
-                </label>
-                <label class="col s2">
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Filled in</span>
-                </label>
-                <label class="col s2">
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Filled in</span>
-                </label>
-                <label class="col s2">
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Filled in</span>
-                </label>
-            </div>
+            <div class="row" id="languageFilter"></div>
+            <div class="row" id="categoryFilter"></div>
+            <div class="row" id="sourcesFilter"></div>
+            <div class="row" id="feed"></div>
         </div>
         <script type="module" src="./src/app.js"></script>
     </body>

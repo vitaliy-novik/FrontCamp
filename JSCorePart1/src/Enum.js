@@ -1,54 +1,57 @@
 const Enum = {
+    Default: {
+        Language: 'en'
+    },
     Categories: [
         {
             id: 'business',
-            display: 'business'
-        },
-        {
-            id: 'entertainment',
-            display: 'entertainment'
+            name: 'Business'
         },
         {
             id: 'general',
-            display: 'general'
+            name: 'General'
         },
         {
             id: 'health',
-            display: 'health'
+            name: 'Health'
         },
         {
             id: 'science',
-            display: 'science'
+            name: 'Science'
         },
         {
             id: 'sports',
-            display: 'sports'
+            name: 'Sports'
         },
         {
             id: 'technology',
-            display: 'technology'
+            name: 'Technology'
+        },
+        {
+            id: 'entertainment',
+            name: 'Entertainment'
         }
     ],
     Languages: [
         {
-            id: 'de',
-            display: 'Deutsch'
+            id: 'en',
+            name: 'English'
         },
         {
-            id: 'en',
-            display: 'English'
-        },
+            id: 'de',
+            name: 'Deutsch'
+        },        
         {
             id: 'fr',
-            display: 'French'
+            name: 'French'
         },
         {
             id: 'it',
-            display: 'Italian'
+            name: 'Italian'
         },
         {
             id: 'ru',
-            display: 'Русский'
+            name: 'Русский'
         }
         // TODO add more
     ],

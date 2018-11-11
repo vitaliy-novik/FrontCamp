@@ -1,16 +1,20 @@
-export function Loading(elemntId) {
-    document.getElementById(elementId).innerHTML = 
-    `<div class="preloader-wrapper small active">
-        <div class="spinner-layer spinner-green-only">
-            <div class="circle-clipper left">
-                <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-                <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-        </div>
-    </div>`;
+export function Loading(elementId) {
+    document.getElementById(elementId).innerHTML = `
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>`;
 };
+
+export function Truncate(text, wordsCount) {
+    let words = text.split(" ");
+    let result = "";
+    for (let i = 0; i < wordsCount; i++) {
+        result += words[i];
+    }
+
+    if (wordsCount < words.length) {
+        result += "...";
+    }
+
+    return result;
+}
