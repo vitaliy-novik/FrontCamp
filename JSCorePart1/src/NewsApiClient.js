@@ -5,9 +5,13 @@ export default class NewsApiClient {
     getSources ({countries, language, categories}, callback) {
         const url = `${baseUrl}v2/sources?country=${countries.join(',')}&language=${language}&category=${categories.join(',')}`;
         this.performGetRequest(url, json => callback(json.sources));
-    }
+    };
 
-    getNews()
+    getHeadlines({sources}, callback) {
+        let sourcesParam = sources.map(s => s.id).join(',');
+        const url = `${baseUrl}v2/top-headlines?sources=${sourcesParam}`;
+        this.performGetRequest(url, json => callback(json.articles));
+    };
 
     performGetRequest(url, callback) {
         let myHeaders = new Headers();

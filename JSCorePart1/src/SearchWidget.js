@@ -35,5 +35,7 @@ export default class SearchWidget {
     onSourcesChange(sources) {
         this.searchParameters.sources = sources;
         this.sourcesFilter.draw(sources);
+        this.newsClient.getHeadlines(
+            this.searchParameters, () => {});
     }
 }
