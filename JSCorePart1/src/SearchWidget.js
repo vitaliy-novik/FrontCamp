@@ -10,7 +10,7 @@ export default class SearchWidget {
         this.callback = callback;
         this.newsClient = new NewsClient();
         this.languageFilter = new LanguageFilter(
-            'languageFilter', this.onLanguageChanged, Enum.Languages, Enum.Default.Language);
+            'languageFilter', this.onLanguageChanged.bind(this), Enum.Languages, Enum.Default.Language);
         this.categoryFilter = new CategoryFilter(
             'categoryFilter', this.onCategoryChanged, Enum.Categories);
         this.sourcesFilter = new SourcesFilter('sourcesFilter');
@@ -19,11 +19,13 @@ export default class SearchWidget {
             countries: [],
             language: Enum.Default.Language,
             categories: [],
-            sources: []
+            sources: [],
+            query: ''
         };
     };
 
     draw() {
+        document.getElementById("submitSearchButton").onclick = this.searchClickHandler.bind(this);
         this.languageFilter.draw();
         this.categoryFilter.draw();
         this.newsClient.getSources(
@@ -32,10 +34,24 @@ export default class SearchWidget {
         Loading('sourcesFilter');
     };
 
+    searchClickHandler () {
+        this.searchParameters.query = document.getElementById("query").value;
+        this.newsClient.getHeadlines(
+            this.searchParameters, this.callback);
+    };
+
+    onLanguageChanged(language) {
+        this.searchParameters.language = language;
+        this.newsClient.getSources(
+            this.searchParameters, 
+            this.onSourcesChange.bind(this));
+        Loading('sourcesFilter');
+    }
+
     onSourcesChange(sources) {
         this.searchParameters.sources = sources;
         this.sourcesFilter.draw(sources);
         this.newsClient.getHeadlines(
-            this.searchParameters, () => {});
+            this.searchParameters, this.callback);
     }
 }

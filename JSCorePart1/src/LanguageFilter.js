@@ -17,5 +17,13 @@ export default class LanguageFilter {
             .join("");
 
         document.getElementById(this.parentId).innerHTML = html;
+
+        this.bindEventsListeners();
+    };
+
+    bindEventsListeners() {
+        document.getElementsByName('language').forEach(element => {
+            element.onchange = event => this.onChange(event.target.value);
+        });
     };
 };

@@ -7,13 +7,17 @@ export function Loading(elementId) {
 
 export function Truncate(text, wordsCount) {
     let words = text.split(" ");
+    if (wordsCount >= words.length){
+        return text;
+    }
+
     let result = "";
     for (let i = 0; i < wordsCount; i++) {
-        result += words[i];
+        result += words[i] + " ";
     }
 
     if (wordsCount < words.length) {
-        result += "...";
+        result += "…";
     }
 
     return result;

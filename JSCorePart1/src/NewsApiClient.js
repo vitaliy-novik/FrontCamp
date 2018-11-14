@@ -7,9 +7,9 @@ export default class NewsApiClient {
         this.performGetRequest(url, json => callback(json.sources));
     };
 
-    getHeadlines({sources}, callback) {
+    getHeadlines({sources, query}, callback) {
         let sourcesParam = sources.map(s => s.id).join(',');
-        const url = `${baseUrl}v2/top-headlines?sources=${sourcesParam}`;
+        const url = `${baseUrl}v2/top-headlines?q=${query}&sources=${sourcesParam}`;
         this.performGetRequest(url, json => callback(json.articles));
     };
 
