@@ -1,12 +1,13 @@
-import CategoryFilter from './CategoryFilter.js';
+import CategoryFilter from './filters/CategoryFilter.js';
 import Enum from './Enum.js';
-import LanguageFilter from './LanguageFilter.js';
+import LanguageFilter from './filters/LanguageFilter.js';
 import NewsClient from './NewsApiClient.js';
-import SourcesFilter from './SourcesFilter.js';
+import SourcesFilter from './filters/SourcesFilter.js';
 import { Loading } from './Utils.js';
 
 export default class SearchWidget {
     constructor(callback) {
+        a.s;
         this.callback = callback;
         this.newsClient = new NewsClient();
         this.languageFilter = new LanguageFilter(

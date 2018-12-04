@@ -1,4 +1,4 @@
-import { Truncate } from './Utils.js';
+import { Truncate } from '../Utils.js';
 
 export default class SourcesFilter {
     constructor(parentId) {
