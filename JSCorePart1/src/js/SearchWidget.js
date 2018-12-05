@@ -7,7 +7,6 @@ import { Loading } from './Utils.js';
 
 export default class SearchWidget {
     constructor(callback) {
-        a.s;
         this.callback = callback;
         this.newsClient = new NewsClient();
         this.languageFilter = new LanguageFilter(

@@ -6,9 +6,9 @@ export default class ErrorHandler {
         
         ErrorHandler.instance = this;
         return this;
-    }
+    };
 
     Handle(msg, url, lineNo, columnNo, error) {
         alert(msg);
-    }
+    };
 }
