@@ -1,0 +1,7 @@
+::1 - - [28/Jan/2019:00:18:05 +0000] "GET /news HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+::1 - - [28/Jan/2019:00:18:14 +0000] "GET /news1 HTTP/1.1" 404 1112 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+::1 - - [28/Jan/2019:00:18:14 +0000] "GET /stylesheets/style.css HTTP/1.1" 304 - "http://localhost:3000/news1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+::1 - - [28/Jan/2019:00:18:19 +0000] "GET /news HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+::1 - - [28/Jan/2019:00:18:22 +0000] "GET /news/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+::1 - - [28/Jan/2019:00:18:30 +0000] "POST /news HTTP/1.1" 200 39 "-" "PostmanRuntime/7.4.0"
+::1 - - [28/Jan/2019:00:18:36 +0000] "PUT /news/2 HTTP/1.1" 200 48 "-" "PostmanRuntime/7.4.0"
