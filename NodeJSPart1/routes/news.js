@@ -1,17 +1,13 @@
 var router = require('express').Router();
 var newsController = require('../controllers/newsController');
 
-router.get('/', function(req, res, next) {
-  // var news = JSON.parse(fs.readFileSync('../news.json', 'utf8'));
-  // res.json(news);
-});
-
-router.route('/news')
+router.route('/')
     .get(newsController.index)
     .post(newsController.new);
 
-router.put('/:id', function(req, res, next) {
-  res.json({ id: req.params.id, requestBody: req.body});
-});
+router.route('/:id')
+    .get(newsController.view)
+    .put(newsController.update)
+    .delete(newsController.delete);
 
 module.exports = router;

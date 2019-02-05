@@ -26,8 +26,8 @@ exports.new = function (req, res) {
     news.content = req.body.content;
     news.save(function (err) {
         res.json({
-            message: 'New contact created!',
-            data: contact
+            message: 'Created!',
+            data: news
         });
     });
 };
@@ -40,4 +40,22 @@ exports.view = function (req, res) {
             data: news
         });
     });
+};
+
+exports.update = function (req, res) {
+    News.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, news) {
+        if (err)
+            res.send(err);
+        res.json({
+            message: "Updated!"
+        });
+    });
+};
+
+exports.delete = function (req, res) {
+    News.findByIdAndRemove(req.params.id, function (err) {
+        if (err)
+            res.send(err);
+        res.send('Deleted!');
+    })
 };
