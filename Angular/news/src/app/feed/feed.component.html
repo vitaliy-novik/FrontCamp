@@ -1,0 +1,5 @@
+<app-toolbar (sourceChange)="onSourceChanged($event)"></app-toolbar>
+<ul>
+    <app-synopsis *ngFor="let item of displayedNews; let id = index" [article]="item" [id]="id"></app-synopsis>
+</ul>
+<button type="button" (click)="loadMore()" class="btn btn-primary btn-lg btn-block">Load More</button>

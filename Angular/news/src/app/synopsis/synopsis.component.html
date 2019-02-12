@@ -1,0 +1,15 @@
+<div class="media border">
+    <img class="align-self-start mr-3 col-2" [src]="article.urlToImage" alt="Generic placeholder image">
+    <div class="media-body col-6">
+        <h5 class="mt-0">{{article.title}}</h5>
+        <p>{{article.description}}</p>
+        <a [href]="'/article/'+id">Read more...</a>
+    </div>
+    <div class="col-2">
+        {{article.publishedAt}}
+    </div>
+    <div class="col-2">
+        <a [href]="'/article/edit/'+id" class="btn btn-primary btn-block">Edit</a>
+        <button class="btn btn-primary btn-block">Delete</button>
+    </div>
+</div>
