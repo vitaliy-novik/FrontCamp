@@ -36,6 +36,11 @@ export class FeedComponent implements OnInit {
             this.pageNumber = 1;
             this.loadNews();
         });
+        this.apiService.switchLocal.subscribe((local: boolean) => {
+            this.articles = [];
+            this.pageNumber = 1;
+            this.loadNews();
+        });
         this.communicationService.onApplyFilter.subscribe((filterText: string) => {
             this.filterText = filterText;
         })

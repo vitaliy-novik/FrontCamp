@@ -17,7 +17,8 @@ const AppRoutes: Routes = [
     { path: "", component: FeedComponent },
     { path: "feed", component: FeedComponent },
     { path: "article/:id", component: ArticleComponent },
-    { path: "article/edit/:id", component: EditArticleComponent }
+    { path: "edit/:id", component: EditArticleComponent },
+    { path: "create", component: EditArticleComponent }
 ]
 
 @NgModule({

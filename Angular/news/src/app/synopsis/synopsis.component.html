@@ -3,7 +3,7 @@
     <div class="media-body col-6">
         <h5 class="mt-0">{{article.title}}</h5>
         <p>{{article.description}}</p>
-        <a [href]="'/article/'+id">Read more...</a>
+        <a *ngIf="!!article._id" [href]="'/article/'+article._id">Read more...</a>
     </div>
     <div class="col-2">
         {{article.publishedAt | date:"dd/MM/yy" }}
@@ -11,7 +11,7 @@
     <div class="col-2">
         <button *ngIf="!article._id; else elseBlock" (click)="save(article)" class="btn btn-primary btn-block">Save</button>
         <ng-template #elseBlock>
-            <a [href]="'/article/edit/'+article._id" class="btn btn-primary btn-block">Edit</a>
+            <a [href]="'/edit/'+article._id" class="btn btn-primary btn-block">Edit</a>
             <button (click)="delete(article._id)" class="btn btn-primary btn-block">Delete</button>
         </ng-template>
     </div>

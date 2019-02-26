@@ -9,7 +9,7 @@ exports.index = function (req, res) {
             });
         }
         res.json({
-            data: news
+            articles: news
         });
     });
 };

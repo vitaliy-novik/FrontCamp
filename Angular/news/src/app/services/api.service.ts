@@ -14,20 +14,32 @@ const localNewsBaseUrl = "http://localhost:3000";
 export class ApiService {
 
   selectedSourceId: string;
+  onlyLocal: boolean;
 
   constructor(private http: HttpClient) { }
 
   public updateSelectedSource: EventEmitter<Source> = new EventEmitter();
+  public switchLocal: EventEmitter<boolean> = new EventEmitter();
 
   selectSource(source: Source) {
     this.selectedSourceId = source.id;
     this.updateSelectedSource.emit(source);
   }
 
+  setLocal(onlyLocal: boolean) {
+    this.onlyLocal = onlyLocal;
+    this.switchLocal.emit(onlyLocal);
+  }
+
   getNews(pageSize: number, pageNumber: number){
-    let url: string = `${apiNewsBaseUrl}v2/top-headlines?apiKey=${apiKey}&pageSize=${pageSize}&page=${pageNumber}`;
-    if (this.selectedSourceId) {
-      url += `&sources=${this.selectedSourceId}`;
+    let url: string;
+    if (this.onlyLocal) {
+      url = `${localNewsBaseUrl}/news`;
+    } else {
+      url = `${apiNewsBaseUrl}v2/top-headlines?apiKey=${apiKey}&pageSize=${pageSize}&page=${pageNumber}`;
+      if (this.selectedSourceId) {
+        url += `&sources=${this.selectedSourceId}`;
+      }
     }
 
     return this.http.get<News>(url);

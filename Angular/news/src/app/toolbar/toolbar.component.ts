@@ -13,6 +13,7 @@ export class ToolbarComponent implements OnInit {
     sourceId: string;
     sources: Source[];
     filterText: string;
+    onlyLocal: boolean;
 
     constructor(
         private apiService: ApiService,
@@ -23,6 +24,11 @@ export class ToolbarComponent implements OnInit {
         this.sourceId = sourceId;
         let source = this.sources.find((s: any) => s.id == sourceId);
         this.apiService.selectSource(source);
+    }
+
+    setLocal(onlyLocal: boolean) {
+        this.onlyLocal = onlyLocal;
+        this.apiService.setLocal(onlyLocal);
     }
 
     applyFilter(filterText: string) {
