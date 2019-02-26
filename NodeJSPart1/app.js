@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var fs = require('fs');
 var logger = require('morgan');
 var mongoose = require("mongoose");
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var newsRouter = require('./routes/news');
@@ -18,6 +19,10 @@ app.set('view engine', 'jade');
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 app.use(logger('combined', { 
   stream: accessLogStream
+}));
+app.use(cors({
+  origin: 'http://localhost:4200',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -1,27 +1,25 @@
 <div class="row">
-    <form class="form-inline col-10">
-        <label class="sr-only" for="source">Select source</label>
-        <div class="input-group col-3">
-            <select class="custom-select mr-sm-2" id="source" (change)="onSourceChange($event.target.value)">
-                <option selected>Select source</option>
-                <option *ngFor="let source of sources; let i = index" [value]="i">{{source.name}}</option>
-            </select>
-        </div>
-      
-        <label class="sr-only" for="filter">Type your text...</label>
-        <div class="input-group col-3">
-            <input type="text" class="form-control" id="filter" placeholder="Type your text...">
-        </div>
-        
-        <button type="submit" class="btn btn-primary col-1">Filter</button>
+    <label class="sr-only" for="source">Select source</label>
+    <div class="input-group col-3">
+        <select class="custom-select mr-sm-2" id="source" (change)="onSourceChange($event.target.value)">
+            <option selected>Select source</option>
+            <option *ngFor="let source of sources; let i = index" [value]="source.id">{{source.name}}</option>
+        </select>
+    </div>
+    
+    <label class="sr-only" for="filter">Type your text...</label>
+    <div class="input-group col-3">
+        <input type="text" #filterInput class="form-control" id="filter" placeholder="Type your text...">
+    </div>
+    
+    <button type="submit" (click)="applyFilter(filterInput.value)" class="btn btn-primary col-1">Filter</button>
 
-        <div class="form-check col-3">
-          <input class="form-check-input" type="checkbox" id="justMy">
-          <label class="form-check-label" for="justMy">
-              Only created by me
-          </label>
-        </div>
-    </form>
+    <div class="form-check col-3">
+        <input class="form-check-input" type="checkbox" id="justMy">
+        <label class="form-check-label" for="justMy">
+            Only created by me
+        </label>
+    </div>
 
     <div class="col-2">
         <button type="submit" class="btn btn-primary">Add Article</button>

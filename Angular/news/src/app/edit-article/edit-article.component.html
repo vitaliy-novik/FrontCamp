@@ -1,18 +1,31 @@
-<form>
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="source">Source</label>
+        <select class="custom-select mr-sm-2" formControlName="source">
+            <option *ngFor="let source of sources" [ngValue]="source.id">
+              {{ source.name }}
+            </option>
+        </select>
+      </div>
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" [value]="article.title" placeholder="Title">
+      <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title">
     </div>
     <div class="form-group">
         <label for="author">Author</label>
-        <input type="text" class="form-control" id="author" [value]="article.author" placeholder="Author">
+        <input formControlName="author" type="text" class="form-control" id="author" placeholder="Author">
       </div>
     <div class="form-group">
         <label for="publishedAt">Published at</label>
-        <input type="datetime" class="form-control" id="publishedAt" [value]="article.publishedAt" placeholder="Title">
+        <input formControlName="publishedAt" type="date" class="form-control" id="publishedAt">
     </div>
     <div class="form-group">
-      <label for="content">Example textarea</label>
-      <textarea class="form-control" id="content" rows="3">{{article.content}}</textarea>
+      <label for="content">Description</label>
+      <textarea formControlName="description" class="form-control" id="content" rows="2">{{article.description}}</textarea>
     </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <textarea formControlName="content" class="form-control" id="content" rows="3">{{article.content}}</textarea>
+      </div>
 </form>
+<button (click)="submitForm()">Submit</button>

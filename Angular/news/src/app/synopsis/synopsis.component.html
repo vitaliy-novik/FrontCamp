@@ -6,10 +6,13 @@
         <a [href]="'/article/'+id">Read more...</a>
     </div>
     <div class="col-2">
-        {{article.publishedAt}}
+        {{article.publishedAt | date:"dd/MM/yy" }}
     </div>
     <div class="col-2">
-        <a [href]="'/article/edit/'+id" class="btn btn-primary btn-block">Edit</a>
-        <button class="btn btn-primary btn-block">Delete</button>
+        <button *ngIf="!article._id; else elseBlock" (click)="save(article)" class="btn btn-primary btn-block">Save</button>
+        <ng-template #elseBlock>
+            <a [href]="'/article/edit/'+article._id" class="btn btn-primary btn-block">Edit</a>
+            <button (click)="delete(article._id)" class="btn btn-primary btn-block">Delete</button>
+        </ng-template>
     </div>
 </div>
