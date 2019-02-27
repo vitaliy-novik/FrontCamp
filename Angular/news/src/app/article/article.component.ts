@@ -10,7 +10,7 @@ import { ApiService } from '../services/api.service';
 })
 export class ArticleComponent implements OnInit {
     private id: string;
-    private article: Article;
+    public article: Article;
 
     constructor(
       private route: ActivatedRoute,

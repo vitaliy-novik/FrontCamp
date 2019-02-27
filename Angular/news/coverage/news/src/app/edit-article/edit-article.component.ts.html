@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">45% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/40</span>
+        <span class='fraction'>18/40</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>2/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.11% </span>
+        <span class="strong">44.44% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/36</span>
+        <span class='fraction'>16/36</span>
       </div>
     </div>
     <p class="quiet">
@@ -137,17 +137,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,8 +153,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -180,7 +180,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -193,7 +193,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,15 +213,15 @@ import Article from '../models/article';
 export class EditArticleComponent implements OnInit {
     id: string;
     article: Article;
-<span class="cstat-no" title="statement not covered" >    sources: Source[] = [];</span>
+    sources: Source[] = [];
 &nbsp;
-    public <span class="cstat-no" title="statement not covered" >authorControl: FormControl = new FormControl('');</span>
-    public <span class="cstat-no" title="statement not covered" >titleControl: FormControl = new FormControl('', Validators.required);</span>
-    public <span class="cstat-no" title="statement not covered" >descriptionControl: FormControl = new FormControl('');</span>
-    public <span class="cstat-no" title="statement not covered" >publishedAtControl: FormControl = new FormControl('');</span>
-    public <span class="cstat-no" title="statement not covered" >contentControl: FormControl = new FormControl('', Validators.required);</span>
-    public <span class="cstat-no" title="statement not covered" >sourceControl: FormControl = new FormControl('', Validators.required);</span>
-    public <span class="cstat-no" title="statement not covered" >form: FormGroup = new FormGroup({</span>
+    public authorControl: FormControl = new FormControl('');
+    public titleControl: FormControl = new FormControl('', Validators.required);
+    public descriptionControl: FormControl = new FormControl('');
+    public publishedAtControl: FormControl = new FormControl('');
+    public contentControl: FormControl = new FormControl('', Validators.required);
+    public sourceControl: FormControl = new FormControl('', Validators.required);
+    public form: FormGroup = new FormGroup({
         author: this.authorControl,
         title: this.titleControl,
         description: this.descriptionControl,
@@ -230,9 +230,9 @@ export class EditArticleComponent implements OnInit {
         source: this.sourceControl
     });
 &nbsp;
-<span class="fstat-no" title="function not covered" >    constructor(</span>
-        private <span class="cstat-no" title="statement not covered" >apiService: A</span>piService,
-        private <span class="cstat-no" title="statement not covered" >route: A</span>ctivatedRoute) {
+    constructor(
+        private apiService: ApiService,
+        private route: ActivatedRoute) {
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    submitForm(</span></span>) {
@@ -255,8 +255,8 @@ export class EditArticleComponent implements OnInit {
 &nbsp;
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    ngOnInit(</span></span>) {
-<span class="cstat-no" title="statement not covered" >        this.id = this.route.snapshot.params["id"];</span>
+    ngOnInit() {
+        this.id = this.route.snapshot.params["id"];
         if (this.id) {
 <span class="cstat-no" title="statement not covered" >          this.apiService.getArticle(this.id).subscribe(<span class="fstat-no" title="function not covered" >(r</span>esp: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >              this.article = resp.data;</span>
@@ -269,7 +269,7 @@ export class EditArticleComponent implements OnInit {
           });
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        this.apiService.getSources().subscribe(<span class="fstat-no" title="function not covered" >(r</span>esp:any) =&gt; {</span>
+        this.apiService.getSources().subscribe(<span class="fstat-no" title="function not covered" >(r</span>esp:any) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.sources = resp.sources;</span>
         });
     }
@@ -280,7 +280,7 @@ export class EditArticleComponent implements OnInit {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 27 2019 04:16:14 GMT+0300 (RTZ 2 (зима))
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 27 2019 15:38:56 GMT+0300 (Moscow Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

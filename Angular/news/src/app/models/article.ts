@@ -1,6 +1,6 @@
 import Source from './source';
 
-export default interface Article {
+export default class Article {
     _id: string;
     source: Source;
     author: string;

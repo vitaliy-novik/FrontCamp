@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">18.52% </span>
+        <span class="strong">55.56% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/27</span>
+        <span class='fraction'>15/27</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">28.57% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>2/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">54.17% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/24</span>
+        <span class='fraction'>13/24</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,15 +107,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -127,17 +127,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,15 +155,15 @@ import News from '../models/news';
     styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-<span class="cstat-no" title="statement not covered" >    pageNumber: number = 1;</span>
-<span class="cstat-no" title="statement not covered" >    pageSize: number = 5;</span>
-<span class="cstat-no" title="statement not covered" >    articles: Article[] = [];</span>
-<span class="cstat-no" title="statement not covered" >    hasMore: boolean = false;</span>
+    pageNumber: number = 1;
+    pageSize: number = 5;
+    articles: Article[] = [];
+    hasMore: boolean = false;
     filterText: string;
 &nbsp;
-<span class="fstat-no" title="function not covered" >    constructor(</span>
-        private <span class="cstat-no" title="statement not covered" >apiService: A</span>piService,
-        private <span class="cstat-no" title="statement not covered" >communicationService: C</span>ommunicationService) {
+    constructor(
+        private apiService: ApiService,
+        private communicationService: CommunicationService) {
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    loadNews(</span></span>) {
@@ -174,18 +174,18 @@ export class FeedComponent implements OnInit {
         });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    ngOnInit(</span></span>) {
-<span class="cstat-no" title="statement not covered" >        this.apiService.updateSelectedSource.subscribe(<span class="fstat-no" title="function not covered" >(s</span>ource: Source) =&gt; {</span>
+    ngOnInit() {
+        this.apiService.updateSelectedSource.subscribe(<span class="fstat-no" title="function not covered" >(s</span>ource: Source) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.articles = [];</span>
 <span class="cstat-no" title="statement not covered" >            this.pageNumber = 1;</span>
 <span class="cstat-no" title="statement not covered" >            this.loadNews();</span>
         });
-<span class="cstat-no" title="statement not covered" >        this.apiService.switchLocal.subscribe(<span class="fstat-no" title="function not covered" >(l</span>ocal: boolean) =&gt; {</span>
+        this.apiService.switchLocal.subscribe(<span class="fstat-no" title="function not covered" >(l</span>ocal: boolean) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.articles = [];</span>
 <span class="cstat-no" title="statement not covered" >            this.pageNumber = 1;</span>
 <span class="cstat-no" title="statement not covered" >            this.loadNews();</span>
         });
-<span class="cstat-no" title="statement not covered" >        this.communicationService.onApplyFilter.subscribe(<span class="fstat-no" title="function not covered" >(f</span>ilterText: string) =&gt; {</span>
+        this.communicationService.onApplyFilter.subscribe(<span class="fstat-no" title="function not covered" >(f</span>ilterText: string) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.filterText = filterText;</span>
         })
     }
@@ -196,7 +196,7 @@ export class FeedComponent implements OnInit {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 27 2019 04:16:14 GMT+0300 (RTZ 2 (зима))
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 27 2019 15:38:56 GMT+0300 (Moscow Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>
